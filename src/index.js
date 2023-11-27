@@ -23,19 +23,20 @@ app.all("*", async (req, res) => {
     const data = req.body;  
     const logs = data.logs; // Access the "logs" array  
   
-    // Do something with the logs array  
+    console.log(logs); // Print the entire logs array  
   
     let dbdata = {  
       created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),  
       data: data  
     };  
-    console.log(dbdata);  
+ 
     res.send(data);  
   } catch (error) {  
     console.error(error);  
     res.status(500).send('Internal Server Error');  
   }  
 });  
+ 
 
 app.listen(PORT, () => {  
   console.log(`Server listening on port ${PORT}`);  
