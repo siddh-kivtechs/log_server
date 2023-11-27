@@ -1,12 +1,12 @@
 import express from 'express';  
-import { OpenAIClient, AzureKeyCredential } from "@azure/openai";  
+ 
 import cors from 'cors';  
 import { createClient } from "@supabase/supabase-js";  
 import { ulid } from 'ulid';  
 import bodyParser from 'body-parser';  
 import helmet from 'helmet';  
 import morgan from 'morgan';  
-import dotenv from "dotenv/config";  
+
   
 const app = express();  
 const PORT = process.env.PORT || 3000;  
