@@ -13,36 +13,30 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());  
 app.use(bodyParser.json());  
 app.use(morgan('combined'));  
-app.use(helmet());  
+app.use(helmet());   
+  
+const ulidgen = ulid(); 
   
 
-const ulidgen=ulid();
-
-
-
-  
 app.all("*", async (req, res) => {  
-  const data = req.body;  
-  const jsonString = JSON.stringify(data);  
-  const strippedStr = jsonString.replace(/`/g, '');  
+  try {  
+    const data = req.body;  
+    const logs = data.logs; // Access the "logs" array  
   
-
-
-    let dbdata={
-        created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
-        data:data
-    };
-console.log(dbdata);
-  res.send(data);
-
+    // Do something with the logs array  
   
+    let dbdata = {  
+      created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),  
+      data: data  
+    };  
+    console.log(dbdata);  
+    res.send(data);  
+  } catch (error) {  
+    console.error(error);  
+    res.status(500).send('Internal Server Error');  
+  }  
+});  
 
- 
-  
-}); 
-
-
-  
 app.listen(PORT, () => {  
   console.log(`Server listening on port ${PORT}`);  
 });  
