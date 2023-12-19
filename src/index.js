@@ -1,6 +1,5 @@
 import express from 'express';  
- 
-import cors from 'cors';  
+ import cors from 'cors';  
 import { createClient } from "@supabase/supabase-js";  
 import { ulid } from 'ulid';  
 import bodyParser from 'body-parser';  
