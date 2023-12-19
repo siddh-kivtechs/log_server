@@ -29,16 +29,16 @@ app.all("*", async (req, res) => {
   
     console.log(logs); 
   
-    let dbdata = {  
-      data: data  
-    };  
+    // let dbdata = {  
+    //   data: data  
+    // };  
  
     res.send(data);  
   //  Send the log to SUPABASE 
 
        supabase  
   .from('hooks')  
-  .insert([dbdata])  
+  .insert(data)  
   .then(response => {  
     console.log('Data sent to Supabase successfully:', response);  
   })  
