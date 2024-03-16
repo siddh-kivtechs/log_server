@@ -22,11 +22,8 @@ app.all("*", async (req, res) => {
     const data = req.body;  
     const logs = data.logs; 
   
-    console.log(logs); 
+    console.log(data); 
   
-    // let dbdata = {  
-    //   data: data  
-    // };  
  
     res.send(data);  
  
