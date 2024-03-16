@@ -6,7 +6,7 @@
     "scripts": {
         "start": "vercel dev"
     },
-    "keywords": [],
+    "keywords": ["OKTA LOGS","MONGO DB"],
     "author": "",
     "type": "module",
     "license": "ISC",
