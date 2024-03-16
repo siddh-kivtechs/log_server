@@ -1,6 +1,5 @@
 import express from 'express';  
- import cors from 'cors';  
-import { createClient } from "@supabase/supabase-js";  
+ import cors from 'cors';   
 import { ulid } from 'ulid';  
 import bodyParser from 'body-parser';  
 import helmet from 'helmet';  
@@ -13,10 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());  
 app.use(morgan('combined'));  
 app.use(helmet()); 
-//  Set & Initialize Supabase 
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+
   
 const ulidgen = ulid(); 
   
@@ -33,17 +29,7 @@ app.all("*", async (req, res) => {
     // };  
  
     res.send(data);  
-  //  Send the log to SUPABASE 
-
-       supabase  
-  .from('hooks')  
-  .insert(data)  
-  .then(response => {  
-    console.log('Data sent to Supabase successfully:', response);  
-  })  
-  .catch(error => {  
-    console.error('Error sending data to Supabase:', error);  
-  });  
+ 
 
 
    
