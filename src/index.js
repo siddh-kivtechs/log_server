@@ -22,9 +22,7 @@ app.all("*", async (req, res) => {
     const data = req.body;  
     const logs = data.logs; 
   
-    console.log(data); 
-  
- 
+   console.dir(data, { depth: null });  
     res.send(data);  
  
 
