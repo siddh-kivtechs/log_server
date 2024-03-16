@@ -23,6 +23,7 @@
         "morgan": "^1.10.0",
         "uuid": "^9.0.1",
         "@supabase/supabase-js": "*",
-        "ulid": "*"
+        "ulid": "*",
+       "dotenv": "^16.3.1",
     }
 }
