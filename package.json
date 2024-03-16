@@ -1,7 +1,7 @@
 {
  
     "version": "1.0.0",
-    "description": "",
+    "description": "OKTA LOGS",
     "main": "src/index.js",
     "scripts": {
         "start": "vercel dev"
@@ -19,6 +19,7 @@
         "helmet": "^7.0.0",
         "jsonwebtoken": "^9.0.2",
         "mongodb": "^4.17.1",
+        "mongoose": "^8.0.3",
         "morgan": "^1.10.0",
         "uuid": "^9.0.1",
         "@supabase/supabase-js": "*",
